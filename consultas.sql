@@ -109,17 +109,17 @@ ORDER BY s.student_name, c.course_name;
 
 -- Resumen de cursos y sus calificaciones medias, ordenado de más difícil a más fácil
 SELECT c.course_name, AVG(g.grade) AS average_grade
-FROM Courses c
-JOIN Grades g ON c.course_id = g.course_id
+FROM courses c
+JOIN grades g ON c.course_id = g.course_id
 GROUP BY c.course_name
 ORDER BY average_grade ASC;
 
 --  Encontrar qué estudiante y profesor tienen más cursos en común
 SELECT s.student_name, p.professor_name, COUNT(c.course_id) AS common_courses
-FROM Students s
-JOIN Grades g ON s.student_id = g.student_id
-JOIN Courses c ON g.course_id = c.course_id
-JOIN Professors p ON c.professor_id = p.professor_id
+FROM students s
+JOIN grades g ON s.student_id = g.student_id
+JOIN courses c ON g.course_id = c.course_id
+JOIN professors p ON c.professor_id = p.professor_id
 GROUP BY s.student_name, p.professor_name
 ORDER BY common_courses DESC
 LIMIT 1;

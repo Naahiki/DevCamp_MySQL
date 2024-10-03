@@ -30,12 +30,12 @@ INSERT INTO students (student_id, student_name) VALUES
 
 -- Cursos
 INSERT INTO courses (course_id, course_name, professor_id) VALUES
-(1, 'Matemáticas 101', 1),
-(2, 'Física 101', 2),
-(3, 'Química 101', 3),
-(4, 'Biología 101', 4),
-(5, 'Historia 101', 5),
-(6, 'Programación 101', 6),
+(1, 'Matemáticas', 1),
+(2, 'Física', 2),
+(3, 'Química', 3),
+(4, 'Biología', 4),
+(5, 'Historia', 5),
+(6, 'Programación ', 6),
 (7, 'Ingeniería de Software', 7),
 (8, 'Historia Contemporánea', 5),
 (9, 'Álgebra Lineal', 1),

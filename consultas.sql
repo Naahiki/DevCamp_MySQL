@@ -1,4 +1,36 @@
+-- Crear la base de datos
+CREATE DATABASE IF NOT EXISTS devcamp_project_schema;
 USE devcamp_project_schema;
+
+-- Crear la tabla de profesores
+CREATE TABLE IF NOT EXISTS professors (
+    professor_id INT PRIMARY KEY,
+    professor_name VARCHAR(100) NOT NULL
+);
+
+-- Crear la tabla de estudiantes
+CREATE TABLE IF NOT EXISTS students (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(100) NOT NULL
+);
+
+-- Crear la tabla de cursos
+CREATE TABLE IF NOT EXISTS courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(100) NOT NULL,
+    professor_id INT,
+    FOREIGN KEY (professor_id) REFERENCES professors(professor_id)
+);
+
+-- Crear la tabla de calificaciones
+CREATE TABLE IF NOT EXISTS grades (
+    grade_id INT PRIMARY KEY,
+    student_id INT,
+    course_id INT,
+    grade DECIMAL(5, 2),
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
 
 -- Insertar datos de ejemplo
 -- Profesores
